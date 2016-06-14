@@ -1,0 +1,75 @@
+/**
+ * class pour le login
+ */
+.form-signin {
+  max-width: 330px;
+  padding: 15px;
+  margin: 0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+body {
+	background-image:url(Assemblee-nationale.jpg);
+	background-repeat : no-repeat;
+	background-size : 100% auto;
+}
+
+h1 {
+	color : white;
+}
+
+.header {
+    height:50px;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin:0px auto;
+}
+.deconnexion {
+	float : right;
+	margin-top : -43px;
+	margin-right : 5px;
+}
+
+.quizz {
+	background-color: rgba(255, 255, 255, 0.6);
+	margin-top: 10%;
+	margin-left: 25%;
+	margin-right: 25%;
+	padding: 1em;
+}
+
+
+.result {
+	background-color: rgba(255, 255, 255, 0.6);
+	margin-top: 10%;
+	margin-left: 25%;
+	margin-right: 25%;
+	padding: 1em;
+}

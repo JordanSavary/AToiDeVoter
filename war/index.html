@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <meta charset="utf-8" />
+  <title>AngularJS Plunker</title>
+  <link data-require="bootstrap-css@3.3.6" data-semver="3.3.6" rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.css" />
+  <script type="text/javascript" src="https://gc.kis.scr.kaspersky-labs.com/1B74BD89-2A22-4B93-B451-1C9E1052A0EC/main.js" charset="UTF-8"></script><script>
+    document.write('<base href="' + document.location + '" />');
+  </script>
+  <link rel="stylesheet" href="style.css" />
+  <script data-require="angular.js@1.0.x" src="https://code.angularjs.org/1.0.8/angular.js" data-semver="1.0.8"></script>
+  <script data-require="jquery@*" data-semver="2.2.0" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+  <script data-require="bootstrap@3.3.6" data-semver="3.3.6" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script src="app.js"></script>
+  <script src="lois.js"></script>
+  <script src="chart.js"></script>
+</head>
+
+<body ng-controller="GlobalController">
+	<div class="header">
+		<h1><center>De quel bord politique êtes-vous ?</center></h1>
+		<div class="deconnexion"><button type="button" class="btn btn-primary" ng-click="showLogOnly()" ng-hide="showLogin">Déconnexion</button></div>
+	</div>
+
+  <div ng-controller="LoginController" ng-show="showLogin">
+    <form id="connexion" class="form-signin" ng-submit="connexion()">
+      <h3 class="form-signin-heading">Connectez-vous</h3>
+      <input class="form-control" placeholder="Identifiant" ng-model="identifiants.login" required="" autofocus="" />
+      <input type="password" class="form-control" placeholder="Mot de passe" ng-model="identifiants.pwd" required="" />
+      <button type="submit" class="btn btn-lg btn-primary btn-block">Se connecter</button>
+      <p>{{resultat}}</p>
+    </form>
+  </div>
+
+  
+  
+  <div class="quizz" ng-controller="QuizzController" ng-show="showQuizz">
+  	<div class="quizz-loi">
+  		<p>{{loi}}</p>
+	</div>
+    <div class="quizz-button">
+	   <button type="button" class="btn btn-success" ng-click="votePour()">Pour</button>
+	   <button type="button" class="btn btn-danger" ng-click="voteContre()">Contre</button>
+	   <button type="button" class="btn btn-secondary" ng-click="voteBlanc()">Blanc</button>
+    </div>
+  </div>
+
+  <div class="result" ng-controller="ResultController" ng-show="showResult">
+    <h1>Vos résultats!</h1>
+    <p ng-repeat="votesUser in vosVotes() | orderBy : votesUser">{{votesUser}}</p>
+    <h3>Vos affinités politiques!</h3>
+    <ul>
+    	<li ng-repeat="votesPol in votrePolitique() | orderBy : votesPol">{{votesPol}}</li>
+    </ul>
+  </div>
+</body>
+
+</html>
